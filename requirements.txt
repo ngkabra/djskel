@@ -1,0 +1,14 @@
+MySQL-python
+South
+django-crispy-forms
+pytz
+django-tables2
+django-dajaxice
+django-dajax # if easy_install use -Z option!
+django-pipeline
+raven
+
+# Dev/Test
+django-debug-toolbar
+WebTest
+fabric
