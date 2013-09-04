@@ -23,6 +23,9 @@ Then:
 
     create database {{project_name}}, user {{project_name}}
     python manage.py syncdb
+
+    # for each new app, manage.py schemamigration <appname> --auto
+    # followed by fab migrate
 '''
 
 from project_settings.config import *
