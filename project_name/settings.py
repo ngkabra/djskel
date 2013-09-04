@@ -1,37 +1,6 @@
-'''This is a standard django settings template
+'''This is a template for a standard settings file
 
-To use:
-
-    django-admin.py startproject {{project_name}} --template=dbase/skeleton
-
-Then go to {{project_name}}/project_settings and configure
-all the files in there and the sub-directories.
-
-Update {dev,prod,test}/_passwords.py appropriately.
-Backup the _passwords.py files.
-Soft-link appropriate directory to "local"
-
-Then:
-
-    cd <{{project_name}}>/
-    pip install -r requirements.txt
-    git init
-    git add manage.py requirements.txt myproj
-    cd <{{project_name}}>/{{project_name}}/
-    git submodule add git@github.com:ngkabra/dutils.git
-    git submodule add git@github.com:ngkabra/dbase.git
-
-    create database {{project_name}}, user {{project_name}}
-    edit the port number in manage.py
-    python manage.py syncdb
-
-    # for each new app, manage.py schemamigration <appname> --auto
-    # followed by fab migrate
-
-    # For dbtemplates, uncomment here, and in dev/misc.py
-    # for debug toolbar, uncomment in dev/misc.py
-    # for django redirects, uncomment here and in installed_apps
-'''
+See README.md for details on how to use it'''
 
 from project_settings.config import *
 from os.path import join
@@ -40,7 +9,7 @@ import sys
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 USE_L10N = True
-USE_TZ = True
+USE_TZ = True                   # if set use django.utils.timezone.now()
 
 MEDIA_ROOT = join(PROJ_ROOT, 'site_media')
 MEDIA_URL = '/site_media/'
