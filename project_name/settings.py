@@ -22,10 +22,15 @@ Then:
     git submodule add git@github.com:ngkabra/dbase.git
 
     create database {{project_name}}, user {{project_name}}
+    edit the port number in manage.py
     python manage.py syncdb
 
     # for each new app, manage.py schemamigration <appname> --auto
     # followed by fab migrate
+
+    # For dbtemplates, uncomment here, and in dev/misc.py
+    # for debug toolbar, uncomment in dev/misc.py
+    # for django redirects, uncomment here and in installed_apps
 '''
 
 from project_settings.config import *
@@ -50,7 +55,7 @@ STATICFILES_FINDERS = (
     'dajaxice.finders.DajaxiceFinder',
 )
 TEMPLATE_LOADERS = (
-    'dbtemplates.loader.Loader', # not to be cached...
+    # 'dbtemplates.loader.Loader', # not to be cached...
     ('django.template.loaders.cached.Loader',
      ('django.template.loaders.filesystem.Loader',
       'django.template.loaders.app_directories.Loader',
@@ -68,7 +73,8 @@ MIDDLEWARE_CLASSES_PRE = (
 
 MIDDLEWARE_CLASSES_POST = (
     'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
-    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',)
+    # 'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    )
 
 ROOT_URLCONF = '{{project_name}}.urls'
 TEMPLATE_DIRS = (join(PROJ_ROOT, 'templates'),)

@@ -1,7 +1,5 @@
 DEBUG = True
 SITE_ID = 2
-STATIC_ROOT = '/home/navin/webapps/_staticx'
-STATIC_URL = 'http://static.PROJECT.com/'
 
 # Here you can over-ride ADMINS, MANAGERS
 # And pretty much everything else
@@ -27,7 +25,7 @@ EXTRA_MIDDLEWARE = ()
 EXTRA_CONTEXT_PROCESSORS = ()   # these are template_context_processors
 DATABASE_ROUTERS = ()
 
-if True:
+if False:
     DEBUG_TOOLBAR_CONFIG = {
         'INTERCEPT_REDIRECTS': False,
     }
